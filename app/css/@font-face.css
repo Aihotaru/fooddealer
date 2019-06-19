@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "LatoRegular";
+    src: url("LatoRegular/LatoRegular.eot");
+    src: url("LatoRegular/LatoRegular.eot?#iefix")format("embedded-opentype"),
+    url("LatoRegular/LatoRegular.woff") format("woff"),
+    url("LatoRegular/LatoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bemount Line";
+    src: url("9711.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("8921.ttf");
+    font-style: normal;
+    font-weight: normal;
+}

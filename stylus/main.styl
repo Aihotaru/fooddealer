@@ -1,0 +1,391 @@
+@import "nib"
+@import "color_fonts.styl"
+@import "mixins.styl"
+global-reset()
+.cf
+  clearfix()
+body
+  background url(../img/back.png)
+.wrap
+  margin 0 auto
+  min-height 100%
+  font-family fFamilyhead
+  width 1050px
+  @media (max-width 512px)
+    width 300px
+  @media (min-width 512px) and (max-width 817px)
+    width 480px
+  @media (min-width 817px) and (max-width 1067px)
+    width 800px
+
+//header styles --begin--
+
+.header
+  width 100%
+  background bHeader
+  height 95px
+  color fontHnav
+  letter-spacing 4px
+  border-bottom  1px solid borderCol
+  box-shadow 0 2px 5px 0 rgba(0, 0, 0, 0.0784314)
+  @media (max-width 512px)
+    height 65px
+.logo
+  width 80px
+  height 81px
+  margin 0 auto
+  &:hover
+    cursor pointer
+.imgLogo
+  @media (max-width 512px)
+    width 50px
+    height 51px
+.headNav
+  margin  -20px 50px 0
+  text-align left
+  font-size 22px
+  @media (max-width 512px)
+    margin -55px 0px 0
+    font-size 16px
+  @media (min-width 513px) and (max-width 700px)
+    margin -20px -45px 0
+    font-size 18px
+  @media (min-width 700px) and (max-width 815px)
+    margin -20px -40px 0
+    font-size 20px
+ul li
+  list-style-type none
+  display inline
+ul li a
+  text-decoration none
+  padding 5px 40px
+  &:link
+  &:visited
+    color: vLink
+    border none
+  &:hover
+  &:active
+    color hLink
+    border-bottom 2px solid hLink
+    transition all .2s
+  @media (max-width: 1024px) and (min-width: 513px)
+    padding 5px 15px
+  @media (max-width: 512px)
+    padding 5px
+.headFilter.active
+  border-bottom 2px solid hLink
+  color: hLink
+.addBut
+  float right
+  margin -30px 30px 0
+  @media (max-width 512px)
+    margin -20px 0
+.addRecipe
+  butSize(150px, 35px, bBut)
+  font-family fFamilyhead
+  font-set(16px, #152821)
+  letter-spacing 2px
+  border none
+  border-radius 5px
+  outline none
+  &:hover
+    cursor pointer
+  &:active
+  &:focus
+    outline none
+  @media (max-width 1057px) and (min-width 817px)
+    width 200px
+  @media (max-width 817px) and (min-width 512px)
+    width 150px
+  @media (max-width 512px)
+    width 100px
+    height 20px
+
+//header styles --end--
+
+
+//side-navigation --begin---
+
+.sideNav
+  margin 150px 0 0
+  width 50px
+.navSel
+  width 50px
+  height 50px
+  margin 15px 0 0
+  border 5px solid bSideNav
+  font-family fFamilyhead
+  &:hover
+    width 250px
+    transition 0.2s linear  .2s
+    cursor pointer
+    position relative
+    z-index 99999
+  &:not(:hover)
+    transition 0.2s linear  .2s
+.chi
+  background url(../img/chicken.png) no-repeat center left
+  &:hover
+    background url(../img/chicken_hover.png) no-repeat center left, bSideNav
+  &:not(:hover)
+    transition 0.8s linear  .2s
+.chi.active
+  background url(../img/chicken_hover.png) no-repeat center left, bSideNav
+.la
+  background url(../img/lamb.png) no-repeat center left
+  &:hover
+    background url(../img/lamb_hover.png) no-repeat center left, bSideNav
+  &:not(:hover)
+    transition 0.8s linear  .2s
+.la.active
+  background url(../img/lamb_hover.png) no-repeat center left, bSideNav
+.fi
+  background url(../img/fish.png) no-repeat center left
+  &:hover
+    background url(../img/fish_hover.png) no-repeat center left, bSideNav
+  &:not(:hover)
+    transition 0.8s linear  .2s
+.fi.active
+  background url(../img/fish_hover.png) no-repeat center left, bSideNav
+.navSel.active
+  width 50px
+  height 50px
+.t_filer
+  opacity 0
+  visibility hidden
+  padding 15px 120px 0
+  font-set(32px, black)
+.navSel:not(.active):hover .t_filer
+  opacity 1
+  visibility visible
+  transition: opacity 0.3s, visibility 0.5s linear 0.3s;
+  transition-delay 0.3s
+.hidding
+  visibility hidden
+  opacity 0
+  transition .3s
+  transition-delay 0s
+
+//side navigation --end--
+
+
+//recipes content --begin--
+
+#Container .mix
+  display none
+#Container
+  margin -280px auto
+  @media (max-width 1150px)
+    margin-left 90px
+
+//    cards of dish
+
+.mix
+  width 300px
+  height 400px
+  float left
+  margin 15px 20px
+  background bCard
+  border 1px solid borderCol
+  border-radius 5px
+  box-shadow 0 2px 5px 0 rgba(0, 0, 0, 0.2)
+.cardPic
+  width 100%
+  height 100%
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+.PicsDiv
+  width 100%
+  height 40%
+.cardTitle
+  font-set(20px, fontCard)
+  font-family fCard
+  padding 10px 5px 0
+.garnirTitle
+  font-set(28px, fontCard)
+  font-family fCard
+  padding 15px 5px 0
+  text-align center
+  word-wrap break-word
+.dishComposition
+  font-set(16px, fontCard)
+  font-family fCard
+  padding 45px 5px 0
+  text-align right
+
+//  modal window
+
+.mask
+  fixed top left
+  width 100%
+  height 100%
+  background rgba(black, 0.3)
+  z-index 50
+  visibility hidden
+  opacity 0
+  transition .7s
+.modal
+  fixed top 15% left 50%
+  width 500px
+  height 400px
+  margin-left -200px
+  background url(../img/back.png)
+  z-index 100
+  visibility hidden
+  opacity 0
+  transition .5s ease-out
+  transform translateY(45px)
+  border-radius 5px
+.adActive
+  visibility visible
+  opacity 1
+.adActive + .modal
+  visibility visible
+  opacity 1
+  transform translateY(0)
+.close
+  absolute top right
+  width 35px
+  height 30px
+  background transparent
+  cursor pointer
+  border 0
+  outline none
+.description
+  width 100%
+  height 56%
+.browseRecipe
+  width 100%
+  height 40%
+.browseDiv
+  padding-top 100px
+  padding-left 40%
+  font-family fCard
+  color #2e2e2e
+.name
+  margin 25px 15px 0
+  butSize(350px, 30px)
+  font-set(18px, fontHnav)
+  float left
+.composition
+  font-set(16px, fontHnav)
+.Mingr
+  butSize(200px, 30px)
+  text-align right
+  margin 60px 15px 15px 55%
+.ingr
+  butSize(98%, 30px)
+  margin 35px 0 0 5px
+  white-space nowrap
+.Dish
+  outline none
+  border none
+  border-bottom 2px solid #3a614c
+  font-family fCard
+  text-overflow ellipsis
+::-webkit-input-placeholder
+  font-style italic
+  font-set(16px, #6b7468)
+.typeof
+  float left
+  margin-top 25px
+  margin-left 16px
+  width 268px
+  height 34px
+  overflow hidden
+  background url(../img/new_arrow.png) no-repeat right tint(bHeader, 35)
+  border 1px solid borderButCol
+  border-radius 5px
+
+.typeof select
+  background transparent
+  width 268px
+  padding 5px
+  font-size 16px
+  line-height 1
+  border 0
+  border-radius 0
+  height 34px
+  -webkit-appearance none
+  -moz-appearance none
+  font-family fCard
+  color #1b231a
+  letter-spacing 1px
+  &:hover
+    cursor pointer
+.sent
+  butSize(150px, 35px, tint(bHeader, 35))
+  font-set(16px, #152821)
+  letter-spacing 1px
+  border 1px solid borderButCol
+  border-radius 5px
+  outline none
+  font-family fCard
+  margin 20px 35%
+  &:hover
+    cursor pointer
+
+//  addPicture area
+
+.addPicture
+  width 0.1px
+  height 0.1px
+  opacity 0
+  overflow hidden
+  position absolute
+  z-index -1
+.addPicture + label
+  //max-width 80%
+  height 50px
+  white-space nowrap
+  display inline-block
+  overflow hidden
+  padding 0.625rem 1.25rem
+  font-size 18px
+  color #1e241c
+  font-family fCard
+  letter-spacing 1px
+.addPicture
+  display none
+.addPicture + label span
+.addPicture + label strong
+  padding 0.625rem 1.25rem
+.addPicture + label span
+  width 200px
+  min-height 1em
+  display inline-block
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden
+  vertical-align top
+  border 1px solid darken(bHeader, 10)
+  background tint(bHeader, 35)
+  border-top-left-radius 5px
+  border-bottom-left-radius 5px
+.addPicture + label strong
+  height 1em
+  display inline-block
+  background bHeader
+  border 1px solid darken(bHeader, 10)
+  border-top-right-radius 5px
+  border-bottom-right-radius 5px
+.addPicture:focus + label strong
+.addPicture.has-focus + label strong
+.addPicture + label:hover strong
+  border-color darken(bHeader, 10)
+  background darken(bHeader, 10)
+  cursor pointer
+
+//recipes content --end--
+
+
+//footer content --begin--
+
+#footer
+  fixed bottom left
+  padding 10px
+  background rgba(bHeader, 0.5)
+  color black
+  width 100%
+
+//footer content --begin--

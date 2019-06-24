@@ -7,16 +7,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>GULP</title>
-    <link rel="stylesheet" href="cssStyle/main.css">
-    <link rel="stylesheet" href="css/@font-face.css">
+    <link rel="stylesheet" href="app/cssStyle/main.css">
+    <link rel="stylesheet" href="app/css/@font-face.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript"></script>
-    <script src="js/jquery.mixitup.min.js" type="text/javascript"></script>
+    <script src="app/js/jquery.mixitup.min.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="content">
     <div class="header">
         <div class="wrap">
-            <div class="logo filter" data-filter="all"><a href="index.html"><img src="img/logo.png" class="imgLogo hide"></a></div>
+            <div class="logo filter" data-filter="all"><a href="app/index.html"><img src="app/img/logo.png" class="imgLogo hide"></a></div>
             <div class="cf"></div>
             <div class="headNav">
                 <ul>
@@ -32,7 +32,13 @@
                 <button class="close" role="button">X</button>
                 <hr>
                 <div class="description">
-                    <form action="/new.php" enctype="multipart/form-data" method="post">
+                    <form action="app/new.php" enctype="multipart/form-data" method="post">
+                        <?php
+                        if(isset($error))
+                        {
+                            echo $error;
+                        }
+                        ?>
                         <input type="file" class="name Dish" name="img">
                         <input type="text" placeholder="название" class="name Dish" name="name">
                         <select name="type_of" class="select1 typeof">
@@ -48,6 +54,12 @@
                         <input type="text" placeholder="доп ингридиенты" class="composition ingr Dish" name="dop">
                         <!--<input type="text" placeholder="главный ингридиент" class="composition Mingr Dish">-->
                         <input type="submit" value="Отправить">
+                        <?php
+                        if(isset($message))
+                        {
+                            echo $message;
+                        }
+                        ?>
                     </form>
 
                 </div>
@@ -97,6 +109,6 @@ echo '
     });
 
 </script>
-<script src="js/filter.js" type="text/javascript"></script>
+<script src="app/js/filter.js" type="text/javascript"></script>
 </body>
 </html>
